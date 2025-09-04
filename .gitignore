@@ -39,3 +39,48 @@
 
 # debug information files
 *.dwo
+
+# vs 
+*.vs/*
+*.vcxproj*
+
+# build
+build*/
+
+# CMake build directories and files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+install_manifest.txt
+
+# Ninja build files
+.ninja*
+build.ninja
+rules.ninja
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.sublime*
+*.code-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Backup files
+*~
+*.bak
+
+# CLion
+cmake-build-*/
+
+# Additional user-specific files
+*.user
+*.directory
