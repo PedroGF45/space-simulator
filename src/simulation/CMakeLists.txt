@@ -1,5 +1,6 @@
 add_library(simulation STATIC
-    Engine.cpp
+    SpaceObject.cpp
+    SimulationEngine.cpp
 )
 
 target_include_directories(simulation PUBLIC

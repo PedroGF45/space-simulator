@@ -4,10 +4,10 @@ project(SpaceSimulator CXX)
 
 add_subdirectory(src/graphics)
 add_subdirectory(src/input)
-add_subdirectory(src/physics)
 add_subdirectory(src/simulation)
+add_subdirectory(src/physics)
 
-add_executable(SpaceSimulator src/main.cpp "include/simulation/Vector3D.h")
+add_executable(SpaceSimulator src/main.cpp)
 
 target_link_libraries(SpaceSimulator PUBLIC
     graphics
