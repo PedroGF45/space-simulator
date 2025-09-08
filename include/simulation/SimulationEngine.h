@@ -1,4 +1,7 @@
+#pragma once
+
 #include <vector>
+#include "SpaceObject.h"
 #include "../physics/GravitySystem.h"
 
 class SimulationEngine {
