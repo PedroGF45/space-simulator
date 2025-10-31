@@ -1,11 +1,13 @@
 #include <iostream>
 #include <vector>
-#include "../include/simulation/SpaceObject.h"
-#include "../include/simulation/Vector3D.h"
-#include "../include/physics/GravitySystem.h"
-#include "../include/simulation/SimulationEngine.h"
+#include <simulation/SpaceObject.h>
+#include <simulation/Vector3D.h>
+#include <physics/GravitySystem.h>
+#include <simulation/SimulationEngine.h>
 
 int main(int argc, char* argv[]) {
+    (void)argc; (void)argv; // Mark unused parameters to silence MSVC C4100 warnings
+
     // Sun
     Vector3D sun_position(0, 0, 0);
     Vector3D sun_velocity(0, 0, 0);

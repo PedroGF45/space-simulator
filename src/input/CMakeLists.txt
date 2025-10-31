@@ -2,8 +2,9 @@ add_library(input STATIC
     InputManager.cpp
 )
 
+# Expose top-level include directory so consumers include <input/...>
 target_include_directories(input PUBLIC
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
 

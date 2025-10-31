@@ -13,6 +13,10 @@ endif()
 
 # Platform/compiler-specific warning flags
 if(MSVC)
+  # Replace the default /W3 in CMAKE_CXX_FLAGS with /W4 so the compiler
+  # does not emit the D9025 "overriding '/W3' with '/W4'" informational
+  # message when both flags would otherwise be present on the command line.
+  string(REPLACE "/W3" "/W4" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
   add_compile_options(/W4 /permissive-)
 else()
   add_compile_options(-Wall -Wextra -Wpedantic)
@@ -34,10 +38,9 @@ target_link_libraries(SpaceSimulator PRIVATE
     simulation
 )
 
-# If the executable needs the top-level include folder, prefer relying on
-# libraries to provide their include directories. Keep it here only if
-# main.cpp depends on headers in include/ root.
-target_include_directories(SpaceSimulator PRIVATE ${PROJECT_SOURCE_DIR}/include)
+# Leave include management to the library targets so they export the correct
+# per-module include directories. Do not add a global top-level include dir
+# here to avoid encouraging relative includes in sources.
 
 # --- GoogleTest setup (fetched once globally) ---
 include(FetchContent)

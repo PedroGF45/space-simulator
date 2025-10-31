@@ -1,4 +1,4 @@
-#include "../../include/simulation/SpaceObject.h"
+#include <simulation/SpaceObject.h>
 
 // Constructor
 SpaceObject::SpaceObject(std::string name, double mass, Vector3D position, Vector3D velocity, Vector3D acceleration) :

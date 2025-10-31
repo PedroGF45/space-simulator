@@ -1,6 +1,7 @@
 #pragma once
-#include <string>
+
 #include "Vector3D.h"
+#include <string>
 
 class SpaceObject {
 

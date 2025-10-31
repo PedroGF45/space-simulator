@@ -2,10 +2,9 @@ add_library(graphics STATIC
     Renderer.cpp
 )
 
-# Prefer exposing the top-level include directory so consumers can include
-# <graphics/...>. Use generator expressions to separate build vs install.
+# Expose top-level include directory so consumers include <graphics/...>
 target_include_directories(graphics PUBLIC
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
 
