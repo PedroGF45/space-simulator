@@ -79,6 +79,13 @@ Space Simulator is a modular, extensible C++ application that simulates celestia
 	 ./build/tests/space-simulator-test
 	 ```
 
+
+## Simulation Example
+
+Below is a visual representation of the simulation output, showing the interaction and movement of celestial objects in interstellar space:
+
+![Simulation Output](assets/simulation_output.png)
+
 ## Usage
 
 The default simulation models the Sun and several planets. You can extend `main.cpp` to add more objects or customize initial conditions.
