@@ -1,0 +1,23 @@
+# Test executable
+add_executable(SpaceSimulatorTest
+    Vector3D_test.cpp
+    SpaceObject_test.cpp
+    GravitySystem_test.cpp
+    SimulationEngine_test.cpp
+    pch.cpp
+)
+
+target_include_directories(SpaceSimulatorTest PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+target_link_libraries(SpaceSimulatorTest PRIVATE
+    simulation
+    physics
+    input
+    graphics
+    GTest::gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(SpaceSimulatorTest)

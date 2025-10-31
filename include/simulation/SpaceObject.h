@@ -1,30 +1,36 @@
 #pragma once
-#include <string>
+
 #include "Vector3D.h"
+#include <string>
 
 class SpaceObject {
 
-	private:
-		std::string name;
-		Vector3D position;
-		Vector3D velocity;
-		Vector3D acceleration;
-		double mass;
+private:
+	std::string name;
+	double mass;
+	Vector3D position;
+	Vector3D velocity;
+	Vector3D acceleration;
+	Vector3D net_force;
 
-	public:
-		SpaceObject(std::string name, double mass, Vector3D position, Vector3D velocity, Vector3D acceleration) :
-			name(name), mass(mass), position(position), velocity(velocity), acceleration(acceleration) {
-		};
+public:
+	SpaceObject(std::string name, double mass, Vector3D position, Vector3D velocity, Vector3D acceleration);
 
-		std::string getName() const { return name; };
-		Vector3D getPosition() const { return position; };
-		Vector3D getVelocity() const { return velocity; };
-		Vector3D getAcceleration() const { return acceleration; };
-		double getMass() const { return mass; };
+	// Getters
+	std::string getName() const;
+	double getMass() const;
+	Vector3D getPosition() const;
+	Vector3D getVelocity() const;
+	Vector3D getAcceleration() const;
+	Vector3D getNetForce() const;
 
-		void setPosition(Vector3D new_position) { position = new_position; };
-		void setVelocity(Vector3D new_velocity) { velocity = new_velocity; };
-		void setAcceleration(Vector3D new_acceleration) { acceleration = new_acceleration; };
+	// Setters
+	void setPosition(Vector3D new_position);
+	void setVelocity(Vector3D new_velocity);
+	void setAcceleration(Vector3D new_acceleration);
+	void setNetForce(Vector3D new_net_force);
 
-		Vector3D CalculateGravity(SpaceObject spaceObject) {};
+	// Physics methods
+	void updateObject(double dt);
+	void updateAcceleration();
 };
